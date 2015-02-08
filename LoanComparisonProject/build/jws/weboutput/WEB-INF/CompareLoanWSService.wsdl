@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="CompareLoanWSServiceDefinitions" targetNamespace="http://loanservice" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://loanservice" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="java:loanservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Loan">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="apr" nillable="false" type="xs:int"/>
+          <xs:element minOccurs="1" name="bank" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="1" name="loanId" nillable="false" type="xs:int"/>
+          <xs:element minOccurs="1" name="maxLoan" nillable="false" type="xs:int"/>
+          <xs:element minOccurs="1" name="minLoan" nillable="false" type="xs:int"/>
+          <xs:element minOccurs="1" name="period" nillable="false" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfLoan_literal">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Loan" nillable="true" type="java:Loan" xmlns:java="java:loanservice"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLoan_literal" type="java:ArrayOfLoan_literal" xmlns:java="java:loanservice"/>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://loanservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="java:loanservice"/>
+      <xs:element name="checkCreditRating">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="emp" type="xs:boolean"/>
+            <xs:element name="salary" type="xs:int"/>
+            <xs:element name="ni" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="checkCreditRatingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestLoan">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="minLoan" type="xs:int"/>
+            <xs:element name="period" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="requestLoanResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="java:ArrayOfLoan_literal" xmlns:java="java:loanservice"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s0:types>
+  <s0:message name="checkCreditRating">
+    <s0:part element="s1:checkCreditRating" name="parameters"/>
+  </s0:message>
+  <s0:message name="checkCreditRatingResponse">
+    <s0:part element="s1:checkCreditRatingResponse" name="parameters"/>
+  </s0:message>
+  <s0:message name="requestLoan">
+    <s0:part element="s1:requestLoan" name="parameters"/>
+  </s0:message>
+  <s0:message name="requestLoanResponse">
+    <s0:part element="s1:requestLoanResponse" name="parameters"/>
+  </s0:message>
+  <s0:portType name="CompareLoanWS">
+    <s0:operation name="checkCreditRating" parameterOrder="parameters">
+      <s0:input message="s1:checkCreditRating"/>
+      <s0:output message="s1:checkCreditRatingResponse"/>
+    </s0:operation>
+    <s0:operation name="requestLoan" parameterOrder="parameters">
+      <s0:input message="s1:requestLoan"/>
+      <s0:output message="s1:requestLoanResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="CompareLoanWSServiceSoapBinding" type="s1:CompareLoanWS">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="checkCreditRating">
+      <s2:operation style="document"/>
+      <s0:input>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+    <s0:operation name="requestLoan">
+      <s2:operation style="document"/>
+      <s0:input>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="CompareLoanWSService">
+    <s0:port binding="s1:CompareLoanWSServiceSoapBinding" name="CompareLoanWSSoapPort">
+      <s2:address location="http://localhost:7001/LoanComparisonProject/CompareLoanWS"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

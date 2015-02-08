@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<j2ee:java-wsdl-mapping xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <j2ee:package-mapping>
+    <j2ee:package-type>ratingservice</j2ee:package-type>
+    <j2ee:namespaceURI>http://ratingservice</j2ee:namespaceURI>
+  </j2ee:package-mapping>
+  <j2ee:service-interface-mapping>
+    <j2ee:service-interface>javax.xml.rpc.Service</j2ee:service-interface>
+    <j2ee:wsdl-service-name xmlns:rat="http://ratingservice">rat:CreditRatingService</j2ee:wsdl-service-name>
+    <j2ee:port-mapping>
+      <j2ee:port-name>CreditRatingSoapPort</j2ee:port-name>
+      <j2ee:java-port-name>getCreditRatingSoapPort</j2ee:java-port-name>
+    </j2ee:port-mapping>
+  </j2ee:service-interface-mapping>
+  <j2ee:service-endpoint-interface-mapping>
+    <j2ee:service-endpoint-interface>ratingservice.CreditRatingPortType</j2ee:service-endpoint-interface>
+    <j2ee:wsdl-port-type xmlns:rat="http://ratingservice">rat:CreditRating</j2ee:wsdl-port-type>
+    <j2ee:wsdl-binding xmlns:rat="http://ratingservice">rat:CreditRatingServiceSoapBinding</j2ee:wsdl-binding>
+    <j2ee:service-endpoint-method-mapping>
+      <j2ee:java-method-name>creditResult</j2ee:java-method-name>
+      <j2ee:wsdl-operation>creditResult</j2ee:wsdl-operation>
+      <j2ee:wrapped-element></j2ee:wrapped-element>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>0</j2ee:param-position>
+        <j2ee:param-type>boolean</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:rat="http://ratingservice">rat:creditResult</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>emp</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>1</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:rat="http://ratingservice">rat:creditResult</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>salary</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>2</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:rat="http://ratingservice">rat:creditResult</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>ni</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:wsdl-return-value-mapping>
+        <j2ee:method-return-value>java.lang.String</j2ee:method-return-value>
+        <j2ee:wsdl-message xmlns:rat="http://ratingservice">rat:creditResultResponse</j2ee:wsdl-message>
+        <j2ee:wsdl-message-part-name>return</j2ee:wsdl-message-part-name>
+      </j2ee:wsdl-return-value-mapping>
+    </j2ee:service-endpoint-method-mapping>
+  </j2ee:service-endpoint-interface-mapping>
+</j2ee:java-wsdl-mapping>

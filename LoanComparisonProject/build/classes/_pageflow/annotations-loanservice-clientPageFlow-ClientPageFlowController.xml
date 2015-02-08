@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processed-annotations>
+  <!-- Generated from loanservice.clientPageFlow.ClientPageFlowController on Fri May 04 13:35:12 BST 2012 -->
+  <type-name>loanservice.clientPageFlow.ClientPageFlowController</type-name>
+  <annotated-element>
+    <element-name>compareLoanWSServiceControl</element-name>
+    <annotation>
+      <annotation-name>org.apache.beehive.controls.api.bean.Control</annotation-name>
+    </annotation>
+  </annotated-element>
+</processed-annotations>

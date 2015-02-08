@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<weblogic-webservices xmlns="http://www.bea.com/ns/weblogic/weblogic-webservices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-webservices http://www.bea.com/ns/weblogic/weblogic-webservices/1.0/weblogic-webservices.xsd">
+  <webservice-description>
+    <webservice-description-name>loanservice.CompareLoanWS</webservice-description-name>
+    <webservice-type>JAXRPC</webservice-type>
+    <port-component>
+      <port-component-name>CompareLoanWSSoapPort</port-component-name>
+      <service-endpoint-address>
+        <webservice-contextpath>LoanComparisonProject</webservice-contextpath>
+        <webservice-serviceuri>/CompareLoanWS</webservice-serviceuri>
+      </service-endpoint-address>
+    </port-component>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>ratingservice.CreditRating</webservice-description-name>
+    <webservice-type>JAXRPC</webservice-type>
+    <port-component>
+      <port-component-name>CreditRatingSoapPort</port-component-name>
+      <service-endpoint-address>
+        <webservice-contextpath>LoanComparisonProject</webservice-contextpath>
+        <webservice-serviceuri>/CreditRating</webservice-serviceuri>
+      </service-endpoint-address>
+    </port-component>
+  </webservice-description>
+</weblogic-webservices>

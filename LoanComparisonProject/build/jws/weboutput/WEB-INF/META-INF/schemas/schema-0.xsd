@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://ratingservice" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="creditResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="emp" type="xs:boolean"/>
+        <xs:element name="salary" type="xs:int"/>
+        <xs:element name="ni" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="creditResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="return" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

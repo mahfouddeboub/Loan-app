@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<j2ee:java-wsdl-mapping xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <j2ee:package-mapping>
+    <j2ee:package-type>loanservice</j2ee:package-type>
+    <j2ee:namespaceURI>java:loanservice</j2ee:namespaceURI>
+  </j2ee:package-mapping>
+  <j2ee:package-mapping>
+    <j2ee:package-type>loanservice</j2ee:package-type>
+    <j2ee:namespaceURI>http://loanservice</j2ee:namespaceURI>
+  </j2ee:package-mapping>
+  <j2ee:java-xml-type-mapping>
+    <j2ee:java-type>loanservice.Loan</j2ee:java-type>
+    <j2ee:root-type-qname xmlns:java="java:loanservice">java:Loan</j2ee:root-type-qname>
+    <j2ee:qname-scope>complexType</j2ee:qname-scope>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>apr</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>apr</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>bank</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>bank</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>loanId</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>loanId</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>maxLoan</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>maxLoan</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>minLoan</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>minLoan</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+    <j2ee:variable-mapping>
+      <j2ee:java-variable-name>period</j2ee:java-variable-name>
+      <j2ee:data-member></j2ee:data-member>
+      <j2ee:xml-element-name>period</j2ee:xml-element-name>
+    </j2ee:variable-mapping>
+  </j2ee:java-xml-type-mapping>
+  <j2ee:java-xml-type-mapping>
+    <j2ee:java-type>loanservice.Loan[]</j2ee:java-type>
+    <j2ee:root-type-qname xmlns:java="java:loanservice">java:ArrayOfLoan_literal</j2ee:root-type-qname>
+    <j2ee:qname-scope>complexType</j2ee:qname-scope>
+  </j2ee:java-xml-type-mapping>
+  <j2ee:java-xml-type-mapping>
+    <j2ee:java-type>loanservice.Loan[]</j2ee:java-type>
+    <j2ee:root-type-qname xmlns:java="java:loanservice">java:ArrayOfLoan_literal</j2ee:root-type-qname>
+    <j2ee:qname-scope>element</j2ee:qname-scope>
+  </j2ee:java-xml-type-mapping>
+  <j2ee:service-interface-mapping>
+    <j2ee:service-interface>javax.xml.rpc.Service</j2ee:service-interface>
+    <j2ee:wsdl-service-name xmlns:loan="http://loanservice">loan:CompareLoanWSService</j2ee:wsdl-service-name>
+    <j2ee:port-mapping>
+      <j2ee:port-name>CompareLoanWSSoapPort</j2ee:port-name>
+      <j2ee:java-port-name>getCompareLoanWSSoapPort</j2ee:java-port-name>
+    </j2ee:port-mapping>
+  </j2ee:service-interface-mapping>
+  <j2ee:service-endpoint-interface-mapping>
+    <j2ee:service-endpoint-interface>loanservice.CompareLoanWSPortType</j2ee:service-endpoint-interface>
+    <j2ee:wsdl-port-type xmlns:loan="http://loanservice">loan:CompareLoanWS</j2ee:wsdl-port-type>
+    <j2ee:wsdl-binding xmlns:loan="http://loanservice">loan:CompareLoanWSServiceSoapBinding</j2ee:wsdl-binding>
+    <j2ee:service-endpoint-method-mapping>
+      <j2ee:java-method-name>checkCreditRating</j2ee:java-method-name>
+      <j2ee:wsdl-operation>checkCreditRating</j2ee:wsdl-operation>
+      <j2ee:wrapped-element></j2ee:wrapped-element>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>0</j2ee:param-position>
+        <j2ee:param-type>boolean</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:checkCreditRating</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>emp</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>1</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:checkCreditRating</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>salary</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>2</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:checkCreditRating</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>ni</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:wsdl-return-value-mapping>
+        <j2ee:method-return-value>java.lang.String</j2ee:method-return-value>
+        <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:checkCreditRatingResponse</j2ee:wsdl-message>
+        <j2ee:wsdl-message-part-name>return</j2ee:wsdl-message-part-name>
+      </j2ee:wsdl-return-value-mapping>
+    </j2ee:service-endpoint-method-mapping>
+    <j2ee:service-endpoint-method-mapping>
+      <j2ee:java-method-name>requestLoan</j2ee:java-method-name>
+      <j2ee:wsdl-operation>requestLoan</j2ee:wsdl-operation>
+      <j2ee:wrapped-element></j2ee:wrapped-element>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>0</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:requestLoan</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>minLoan</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:method-param-parts-mapping>
+        <j2ee:param-position>1</j2ee:param-position>
+        <j2ee:param-type>int</j2ee:param-type>
+        <j2ee:wsdl-message-mapping>
+          <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:requestLoan</j2ee:wsdl-message>
+          <j2ee:wsdl-message-part-name>period</j2ee:wsdl-message-part-name>
+          <j2ee:parameter-mode>IN</j2ee:parameter-mode>
+        </j2ee:wsdl-message-mapping>
+      </j2ee:method-param-parts-mapping>
+      <j2ee:wsdl-return-value-mapping>
+        <j2ee:method-return-value>loanservice.Loan[]</j2ee:method-return-value>
+        <j2ee:wsdl-message xmlns:loan="http://loanservice">loan:requestLoanResponse</j2ee:wsdl-message>
+        <j2ee:wsdl-message-part-name>return</j2ee:wsdl-message-part-name>
+      </j2ee:wsdl-return-value-mapping>
+    </j2ee:service-endpoint-method-mapping>
+  </j2ee:service-endpoint-interface-mapping>
+</j2ee:java-wsdl-mapping>

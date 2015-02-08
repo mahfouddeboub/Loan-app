@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<webservices xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <webservice-description>
+    <webservice-description-name>loanservice.CompareLoanWS</webservice-description-name>
+    <wsdl-file>WEB-INF/CompareLoanWSService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/CompareLoanWSService.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>CompareLoanWSSoapPort</port-component-name>
+      <wsdl-port xmlns:loan="http://loanservice">loan:CompareLoanWSSoapPort</wsdl-port>
+      <service-endpoint-interface>loanservice.CompareLoanWSPortType</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>CompareLoanWSServiceServlethttp</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+  <webservice-description>
+    <webservice-description-name>ratingservice.CreditRating</webservice-description-name>
+    <wsdl-file>WEB-INF/CreditRatingService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/CreditRatingService.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>CreditRatingSoapPort</port-component-name>
+      <wsdl-port xmlns:rat="http://ratingservice">rat:CreditRatingSoapPort</wsdl-port>
+      <service-endpoint-interface>ratingservice.CreditRatingPortType</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>CreditRatingServiceServlethttp</servlet-link>
+      </service-impl-bean>
+    </port-component>
+  </webservice-description>
+</webservices>

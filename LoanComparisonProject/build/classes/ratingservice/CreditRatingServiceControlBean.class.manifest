@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+
+Name: ratingservice/CreditRatingServiceControlBean.class
+Java-Bean: true
+Beehive-Control: true

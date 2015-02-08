@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="CreditRatingServiceDefinitions" targetNamespace="http://ratingservice" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://ratingservice" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ratingservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="creditResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="emp" type="xs:boolean"/>
+            <xs:element name="salary" type="xs:int"/>
+            <xs:element name="ni" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="creditResultResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s0:types>
+  <s0:message name="creditResult">
+    <s0:part element="s1:creditResult" name="parameters"/>
+  </s0:message>
+  <s0:message name="creditResultResponse">
+    <s0:part element="s1:creditResultResponse" name="parameters"/>
+  </s0:message>
+  <s0:portType name="CreditRating">
+    <s0:operation name="creditResult" parameterOrder="parameters">
+      <s0:input message="s1:creditResult"/>
+      <s0:output message="s1:creditResultResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="CreditRatingServiceSoapBinding" type="s1:CreditRating">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="creditResult">
+      <s2:operation style="document"/>
+      <s0:input>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="CreditRatingService">
+    <s0:port binding="s1:CreditRatingServiceSoapBinding" name="CreditRatingSoapPort">
+      <s2:address location="http://localhost:7001/LoanComparisonProject/CreditRating"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>

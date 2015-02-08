@@ -1,0 +1,26 @@
+ServiceClass class = ratingservice.CreditRatingServiceControl
+tns = null
+WSDL path relative to JCX = null
+WSDL resource path = ratingservice/CreditRatingService.wsdl
+WSDL service name = {http://ratingservice}CreditRatingService
+_use81BindingTypes = false
+_has81Conversation = false
+_callbackJmsQueueName = weblogic.wsee.DefaultCallbackQueue
+_serviceMethodsMap
+     [creditResult]=[[ServiceMethod name = creditResult, return type = java.lang.String, argument string = boolean emp_arg,int salary_arg,int ni_arg, throws clause = , SEI throws clause =  throws java.rmi.RemoteException, conv phase = none, SOAP style = document, SOAP use = literal, protocols = http-soap], ports = {http://ratingservice}CreditRatingSoapPort], transports = {http://ratingservice}CreditRatingSoapPort->http]]
+_operationNameMap
+     [{http://ratingservice}creditResult]=[[ServiceMethod name = creditResult, return type = java.lang.String, argument string = boolean emp_arg,int salary_arg,int ni_arg, throws clause = , SEI throws clause =  throws java.rmi.RemoteException, conv phase = none, SOAP style = document, SOAP use = literal, protocols = http-soap], ports = {http://ratingservice}CreditRatingSoapPort], transports = {http://ratingservice}CreditRatingSoapPort->http]]
+_portProtocolMap
+     [{http://ratingservice}CreditRatingSoapPort]=[3]
+_portTransportMap
+     [{http://ratingservice}CreditRatingSoapPort]=[http]
+_portLocationMap
+     [{http://ratingservice}CreditRatingSoapPort]=[http://localhost:7001/LoanComparisonProject/CreditRating]
+_serviceMethods
+     [[ServiceMethod name = creditResult, return type = java.lang.String, argument string = boolean emp_arg,int salary_arg,int ni_arg, throws clause = , SEI throws clause =  throws java.rmi.RemoteException, conv phase = none, SOAP style = document, SOAP use = literal, protocols = http-soap], ports = {http://ratingservice}CreditRatingSoapPort], transports = {http://ratingservice}CreditRatingSoapPort->http]]
+_sortedPortProtocols
+     [com.bea.control.servicecontrol.util.memento.v1.ServicePortProtocolV1@912c33]
+Callback Endpoint Context Path:null
+Callback Endpoint Service URI:null
+EightOneCallbackMethods: 
+Callback Class = null
